@@ -2,8 +2,15 @@ name: Super-Linter
 
 on: push
 
+# Add this permissions block to grant write access to the token
+permissions:
+  contents: read # This is already default, but good practice
+  statuses: write # This grants permission to update commit statuses
+  # pull-requests: write # Add this if you are using PR triggers
+
 jobs:
   super-lint:
+    # ... rest of your jobs ...
     name: Lint code base
     runs-on: ubuntu-latest
     steps:
